@@ -6,7 +6,7 @@ import Coma from "./Components/Coma";
 import { useState } from "react";
 
 function App() {
-const [calculo, setCalculo] = useState({})
+const [calculo, setCalculo] = useState("")
  
 
   return (

@@ -3,8 +3,8 @@ import React from 'react';
 const Number = ({number, setCalculo, calculo}) => {
     
     const inputNumber=()=>{
-
-setCalculo({...calculo ,number})
+console.log(number+number)
+setCalculo(calculo + number)
 console.log(number)
     }
 
