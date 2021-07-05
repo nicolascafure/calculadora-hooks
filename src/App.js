@@ -12,10 +12,10 @@ const [calculo, setCalculo] = useState({})
   return (
     <div className= "contenedor-principal">
       <Screen/>
-      <Number number= {1} key={1}/> <Number number= {2} key={2}/> <Number number= {3} key={3}/> <Operators operator= {"+"} key={12}/>
-      <Number number= {4} key={4}/> <Number number= {5} key={5}/> <Number number= {6} key={6}/> <Operators operator= {"-"} key={13} />
-      <Number number= {7} key={7}/> <Number number= {8} key={8}/> <Number number= {9} key={9}/> <Operators operator= {"*"} key={14} />
-      <Number number= {0} key={0} /> <Coma/> <Result/> <Operators operator= {"/"} key={11} />
+      <Number number= {1} key={1} setCalculo={setCalculo}/> <Number number= {2} key={2} setCalculo={setCalculo}/> <Number number= {3} key={3} setCalculo={setCalculo}/> <Operators operator= {"+"} key={12} setCalculo={setCalculo}/>
+      <Number number= {4} key={4} setCalculo={setCalculo}/> <Number number= {5} key={5} setCalculo={setCalculo}/> <Number number= {6} key={6} setCalculo={setCalculo}/> <Operators operator= {"-"} key={13} setCalculo={setCalculo}/>
+      <Number number= {7} key={7} setCalculo={setCalculo}/> <Number number= {8} key={8} setCalculo={setCalculo}/> <Number number= {9} key={9} setCalculo={setCalculo}/> <Operators operator= {"*"} key={14} setCalculo={setCalculo}/>
+      <Number number= {0} key={0} setCalculo={setCalculo} /> <Coma setCalculo={setCalculo} /> <Result/> <Operators operator= {"/"} key={11} setCalculo={setCalculo} />
     </div>
   );
 }
