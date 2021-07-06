@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Screen = ({calculo}) => {
+const Screen = ({calculo,error}) => {
     
     return (  
          <div className="screen">
-<p>{calculo}</p>
+             {error?<p className="errorP">Ingrese un valor correcto</p>:(calculo==="")?<p>0</p>:<p>{calculo}</p>}
+
 </div>
 
     );

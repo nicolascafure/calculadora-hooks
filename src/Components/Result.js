@@ -4,6 +4,9 @@ const Result = ({calculo,setCalculo, setError}) => {
 const getResult=()=>{
 try{
   setCalculo(eval(calculo))
+  if(calculo===""){
+    setCalculo("0")
+  }
   setError(false)
 }catch(err){
 if(err){

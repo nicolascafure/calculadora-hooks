@@ -5,6 +5,7 @@ import Coma from "./Components/Coma";
 import { useState } from "react";
 import BtnNumber from "./Components/BtnNumber";
 import Reset from "./Components/Reset";
+import logo from "./logocalculator.gif"
 
 function App() {
 const [calculo, setCalculo] = useState("")
@@ -13,8 +14,7 @@ const [error, setError] = useState(false)
 
   return (
     <div className= "contenedor-principal">
-      {error?<h1>Ingrese valores correctos</h1>:null}
-      <Screen setCalculo={setCalculo} calculo={calculo}/>
+      <Screen setCalculo={setCalculo} error={error} calculo={calculo}/>
       <BtnNumber number= {1} key={1} setCalculo={setCalculo} calculo={calculo}/>
        <BtnNumber number= {2} key={2} setCalculo={setCalculo} calculo={calculo}/> 
        <BtnNumber number= {3} key={3} setCalculo={setCalculo} calculo={calculo}/> 
@@ -31,6 +31,7 @@ const [error, setError] = useState(false)
       <Coma setCalculo={setCalculo}  calculo={calculo}/> 
       <Result calculo={calculo} setError={setError} setCalculo={setCalculo}/>
        <Operators operator= {"/"} key={11} setCalculo={setCalculo} calculo={calculo} />
+     <div className="logo"><img src={logo}></img></div> 
        <Reset setCalculo={setCalculo} setError={setError} />
     </div>
   );
