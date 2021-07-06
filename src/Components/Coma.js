@@ -1,7 +1,10 @@
 import React from 'react';
-const Coma = () => {
+const Coma = ({setCalculo, calculo}) => {
+    const inputComa=()=>{
+        setCalculo(calculo + ".")
+            }
     return ( 
-        <button className="coma">.</button>
+        <button className="coma" onClick={inputComa}>.</button>
      );
 }
  

@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
+  background-image: url(fondo.jpg);
 }
 
 code {
@@ -20,6 +21,10 @@ code {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  border: 4px solid;
+  border-radius: 25px;
+  background-color: aqua;
+  margin-top: 40px;
 }
 
 .screen{
@@ -49,4 +54,8 @@ code {
 .coma{
   width: 22%;
   margin-bottom: 10px;
+}
+
+.reset{
+  width: 50%;
 }
