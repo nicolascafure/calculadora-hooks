@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Number = ({number, setCalculo, calculo}) => {
+const BtnNumber = ({number, setCalculo, calculo}) => {
     
     const inputNumber=()=>{
-console.log(number+number)
 setCalculo(calculo + number)
-console.log(number)
+
     }
 
     return ( 
@@ -15,4 +14,4 @@ console.log(number)
      );
 }
  
-export default Number;
+export default BtnNumber;

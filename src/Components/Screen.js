@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Screen = () => {
+const Screen = ({calculo}) => {
+    
     return (  
          <div className="screen">
-<input />
+<p>{calculo}</p>
 </div>
 
     );
