@@ -7,10 +7,12 @@ import BtnNumber from "./Components/BtnNumber";
 
 function App() {
 const [calculo, setCalculo] = useState("")
+const [error, setError] = useState(false)
  
 
   return (
     <div className= "contenedor-principal">
+      {error?<h1>Ingrese valores correctos</h1>:null}
       <Screen setCalculo={setCalculo} calculo={calculo}/>
       <BtnNumber number= {1} key={1} setCalculo={setCalculo} calculo={calculo}/>
        <BtnNumber number= {2} key={2} setCalculo={setCalculo} calculo={calculo}/> 
@@ -26,7 +28,7 @@ const [calculo, setCalculo] = useState("")
         <Operators operator= {"*"} key={14} setCalculo={setCalculo} calculo={calculo}/>
       <BtnNumber number= {0} key={0} setCalculo={setCalculo} calculo={calculo} /> 
       <Coma setCalculo={setCalculo}  calculo={calculo}/> 
-      <Result calculo={calculo}/>
+      <Result calculo={calculo} setError={setError} setCalculo={setCalculo}/>
        <Operators operator= {"/"} key={11} setCalculo={setCalculo} calculo={calculo} />
     </div>
   );

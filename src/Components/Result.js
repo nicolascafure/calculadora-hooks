@@ -1,7 +1,16 @@
 import React from 'react';
-const Result = ({calculo}) => {
+const Result = ({calculo,setCalculo, setError}) => {
+
 const getResult=()=>{
-console.log(eval(calculo))
+try{
+  setCalculo(eval(calculo))
+  setError(false)
+}catch(err){
+if(err){
+  setCalculo("")
+  setError(true)
+}
+}
 }
     return (
         <button className="result" onClick={getResult}>=</button>
