@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const Screen = ({calculo,error}) => {
     
@@ -10,5 +11,11 @@ const Screen = ({calculo,error}) => {
 
     );
 }
+
+Screen.propTypes ={
+    calculo: PropTypes.string.isRequired,
+    error:PropTypes.bool.isRequired
+  
+  } 
  
 export default Screen;

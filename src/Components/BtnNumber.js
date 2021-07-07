@@ -23,5 +23,7 @@ setCalculo(calculo + boton)
       
      );
 }
+
  
+
 export default BtnNumber;

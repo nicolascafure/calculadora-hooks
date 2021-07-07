@@ -205,3 +205,27 @@ button{
   font-size: 24px;
   text-align: center;
 }
+
+@media screen and (max-width: 400px) {
+.contenedor-nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.logo-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-nav nav {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+}

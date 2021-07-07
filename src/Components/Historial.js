@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const Historial = ({calculo,setCalculo,historial, setHistorial}) => {
 
@@ -33,5 +34,11 @@ setCalculo(calculo + nuevoResultado[0].resultado)
         </div>
     );
 }
- 
+Historial.propTypes ={
+    calculo: PropTypes.string.isRequired,
+    setCalculo: PropTypes.func.isRequired,
+    historial: PropTypes.array.isRequired,
+    setHistorial: PropTypes.func.isRequired,
+
+ } 
 export default Historial;

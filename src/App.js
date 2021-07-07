@@ -1,7 +1,5 @@
 import Screen from "./Components/Screen";
-import Operators from "./Components/Operators";
 import Result from "./Components/Result";
-import Coma from "./Components/Coma";
 import { useState } from "react";
 import BtnNumber from "./Components/BtnNumber";
 import Reset from "./Components/Reset";
@@ -14,8 +12,7 @@ function App() {
   const [calculo, setCalculo] = useState("");
   const [error, setError] = useState(false);
   const [historial, setHistorial] = useState([]);
-
-  const botones = [1,2,3,"+",4,5,6,"-",7,8,9,"/",0,".","-"]
+  const botones = [1,2,3,"+",4,5,6,"-",7,8,9,"/",0,".","*"]
 
   return (
     <>
