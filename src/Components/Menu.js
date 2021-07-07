@@ -6,7 +6,7 @@ const Menu = () => {
          <nav>      
          <Link to="/">Calculadora</Link>
          <Link to="/historial">Historial</Link>
-            <a  target="_blank" href="https://rooftop.dev/">Visita nuestra web</a>
+            <a  target="_blank" href="https://rooftop.dev/" rel="noreferrer">Visita nuestra web</a>
        </nav></div>
        </>)
 }

@@ -5,62 +5,63 @@ import Coma from "./Components/Coma";
 import { useState } from "react";
 import BtnNumber from "./Components/BtnNumber";
 import Reset from "./Components/Reset";
-import logo from "./logocalculator.gif"
+import logo from "./logocalculator.gif";
 import Menu from "./Components/Menu";
 import Historial from "./Components/Historial";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-const [calculo, setCalculo] = useState("")
-const [error, setError] = useState(false)
-const [historial, setHistorial]=useState([])
- 
+  const [calculo, setCalculo] = useState("");
+  const [error, setError] = useState(false);
+  const [historial, setHistorial] = useState([]);
+
+  const botones = [1,2,3,"+",4,5,6,"-",7,8,9,"/",0,"*","."]
 
   return (
     <>
-    <Router>
-    
-    <Menu/>
-    <div className="flex-center">
-    <div className= "contenedor-principal">
-      
-    <Switch>
-    <Route path="/historial">
-       <Historial historial={historial} setHistorial={setHistorial} calculo={calculo} setCalculo={setCalculo}/>
-          </Route>
-      
-    <Route path="/">
-      <Screen setCalculo={setCalculo} error={error} calculo={calculo}/>
-      <BtnNumber number= {1} key={1} setCalculo={setCalculo} calculo={calculo}/>
-       <BtnNumber number= {2} key={2} setCalculo={setCalculo} calculo={calculo}/> 
-       <BtnNumber number= {3} key={3} setCalculo={setCalculo} calculo={calculo}/> 
-       <Operators operator= {"+"} key={12} setCalculo={setCalculo} calculo={calculo}/>
-      <BtnNumber number= {4} key={4} setCalculo={setCalculo} calculo={calculo}/>
-       <BtnNumber number= {5} key={5} setCalculo={setCalculo} calculo={calculo}/> 
-       <BtnNumber number= {6} key={6} setCalculo={setCalculo} calculo={calculo}/> 
-       <Operators operator= {"-"} key={13} setCalculo={setCalculo} calculo={calculo}/>
-      <BtnNumber number= {7} key={7} setCalculo={setCalculo} calculo={calculo}/>
-       <BtnNumber number= {8} key={8} setCalculo={setCalculo} calculo={calculo}/>
-        <BtnNumber number= {9} key={9} setCalculo={setCalculo} calculo={calculo}/> 
-        <Operators operator= {"*"} key={14} setCalculo={setCalculo} calculo={calculo}/>
-      <BtnNumber number= {0} key={0} setCalculo={setCalculo} calculo={calculo} /> 
-      <Coma setCalculo={setCalculo}  calculo={calculo}/> 
-      <Result calculo={calculo} setError={setError} setCalculo={setCalculo}
-      historial={historial} setHistorial={setHistorial}/>
-       <Operators operator= {"/"} key={11} setCalculo={setCalculo} calculo={calculo} />
-     <div className="logo"><img src={logo}></img></div> 
-       <Reset setCalculo={setCalculo} setError={setError} />
-       </Route>
-    
-      </Switch>
-    </div>
-    </div>
-    </Router>
+      <Router>
+        <Menu />
+        <div className="flex-center">
+          <div className="contenedor-principal">
+            <Switch>
+              <Route path="/historial">
+                <Historial
+                  historial={historial}
+                  setHistorial={setHistorial}
+                  calculo={calculo}
+                  setCalculo={setCalculo}
+                />
+              </Route>
+
+              <Route path="/">
+                <Screen
+                  setCalculo={setCalculo}
+                  error={error}
+                  calculo={calculo}
+                />
+                {botones.map(boton=><BtnNumber
+                  number={boton}
+                  key={boton}
+                  setCalculo={setCalculo}
+                  calculo={calculo}
+                />)}
+                <Result
+                  calculo={calculo}
+                  setError={setError}
+                  setCalculo={setCalculo}
+                  historial={historial}
+                  setHistorial={setHistorial}
+                />
+            
+                <div className="logo">
+                  <img src={logo}></img>
+                </div>
+                <Reset setCalculo={setCalculo} setError={setError} />
+              </Route>
+            </Switch>
+          </div>
+        </div>
+      </Router>
     </>
   );
 }
