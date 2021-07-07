@@ -15,7 +15,7 @@ function App() {
   const [error, setError] = useState(false);
   const [historial, setHistorial] = useState([]);
 
-  const botones = [1,2,3,"+",4,5,6,"-",7,8,9,"/",0,"*","."]
+  const botones = [1,2,3,"+",4,5,6,"-",7,8,9,"/",0,".","-"]
 
   return (
     <>
@@ -40,7 +40,7 @@ function App() {
                   calculo={calculo}
                 />
                 {botones.map(boton=><BtnNumber
-                  number={boton}
+                  boton={boton}
                   key={boton}
                   setCalculo={setCalculo}
                   calculo={calculo}
