@@ -6,6 +6,7 @@ import { useState } from "react";
 import BtnNumber from "./Components/BtnNumber";
 import Reset from "./Components/Reset";
 import logo from "./logocalculator.gif"
+import Menu from "./Components/Menu";
 
 function App() {
 const [calculo, setCalculo] = useState("")
@@ -13,6 +14,9 @@ const [error, setError] = useState(false)
  
 
   return (
+    <>
+    <Menu/>
+    <div className="flex-center">
     <div className= "contenedor-principal">
       <Screen setCalculo={setCalculo} error={error} calculo={calculo}/>
       <BtnNumber number= {1} key={1} setCalculo={setCalculo} calculo={calculo}/>
@@ -34,6 +38,8 @@ const [error, setError] = useState(false)
      <div className="logo"><img src={logo}></img></div> 
        <Reset setCalculo={setCalculo} setError={setError} />
     </div>
+    </div>
+    </>
   );
 }
 
