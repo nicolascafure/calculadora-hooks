@@ -7,10 +7,12 @@ import BtnNumber from "./Components/BtnNumber";
 import Reset from "./Components/Reset";
 import logo from "./logocalculator.gif"
 import Menu from "./Components/Menu";
+import Historial from "./Components/Historial";
 
 function App() {
 const [calculo, setCalculo] = useState("")
 const [error, setError] = useState(false)
+const [historial, setHistorial]=useState([])
  
 
   return (
@@ -33,10 +35,12 @@ const [error, setError] = useState(false)
         <Operators operator= {"*"} key={14} setCalculo={setCalculo} calculo={calculo}/>
       <BtnNumber number= {0} key={0} setCalculo={setCalculo} calculo={calculo} /> 
       <Coma setCalculo={setCalculo}  calculo={calculo}/> 
-      <Result calculo={calculo} setError={setError} setCalculo={setCalculo}/>
+      <Result calculo={calculo} setError={setError} setCalculo={setCalculo}
+      historial={historial} setHistorial={setHistorial}/>
        <Operators operator= {"/"} key={11} setCalculo={setCalculo} calculo={calculo} />
      <div className="logo"><img src={logo}></img></div> 
        <Reset setCalculo={setCalculo} setError={setError} />
+       <Historial historial={historial} setHistorial={setHistorial} calculo={calculo} setCalculo={setCalculo}/>
     </div>
     </div>
     </>
