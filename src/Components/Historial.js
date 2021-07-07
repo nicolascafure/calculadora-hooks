@@ -16,7 +16,7 @@ setCalculo(calculo + nuevoResultado[0].resultado)
 
     return (  
         <div className="contenedor-historial">
-            <h1 className="titulo-historial">Historial de operaciones</h1>
+           {(historial.length===0)? <h1 className="titulo-historial">No hay nada en el historial</h1>: <h1 className="titulo-historial">Historial de operaciones</h1> }
             {
                 historial.map(historia=><div key={historia.id} className="historia">
                     <h3>Calculo</h3>

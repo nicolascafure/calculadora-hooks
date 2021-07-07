@@ -8,6 +8,12 @@ import Reset from "./Components/Reset";
 import logo from "./logocalculator.gif"
 import Menu from "./Components/Menu";
 import Historial from "./Components/Historial";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
 const [calculo, setCalculo] = useState("")
@@ -17,9 +23,18 @@ const [historial, setHistorial]=useState([])
 
   return (
     <>
+    <Router>
+    
     <Menu/>
     <div className="flex-center">
     <div className= "contenedor-principal">
+      
+    <Switch>
+    <Route path="/historial">
+       <Historial historial={historial} setHistorial={setHistorial} calculo={calculo} setCalculo={setCalculo}/>
+          </Route>
+      
+    <Route path="/">
       <Screen setCalculo={setCalculo} error={error} calculo={calculo}/>
       <BtnNumber number= {1} key={1} setCalculo={setCalculo} calculo={calculo}/>
        <BtnNumber number= {2} key={2} setCalculo={setCalculo} calculo={calculo}/> 
@@ -40,9 +55,12 @@ const [historial, setHistorial]=useState([])
        <Operators operator= {"/"} key={11} setCalculo={setCalculo} calculo={calculo} />
      <div className="logo"><img src={logo}></img></div> 
        <Reset setCalculo={setCalculo} setError={setError} />
-       <Historial historial={historial} setHistorial={setHistorial} calculo={calculo} setCalculo={setCalculo}/>
+       </Route>
+    
+      </Switch>
     </div>
     </div>
+    </Router>
     </>
   );
 }
